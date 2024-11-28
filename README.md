@@ -13,5 +13,6 @@ This clones repository to folder `Software-Testing` and library to be tested sho
 
 ```
 cd Software-Testing
+npm install
 npm run test
 ```
