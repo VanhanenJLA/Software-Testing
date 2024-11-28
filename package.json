@@ -1,0 +1,16 @@
+{
+    "name": "software-testing",
+    "version": "1.0.0",
+    "type": "module",
+    "scripts": {
+        "test": "mocha ./tests/*.test.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "MIT",
+    "description": "",
+    "devDependencies": {
+        "chai": "^5.1.2",
+        "mocha": "^10.8.2"
+    }
+}
