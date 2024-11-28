@@ -2,16 +2,16 @@
 
 ## Getting started
 
-Code to be tested should be in folder `library/src`
+### Clone this repository with submodules 
+```
+git clone --recurse-submodules git@github.com:VanhanenJLA/Software-Testing.git
+```
+This clones repository to folder `Software-Testing` and library to be tested should now be in folder `Software-Testing\library`
 
-### get latest version of library to test
-in project root run:
-```
-git clone git@github.com:otula/COMP.SE.200-2024-2025-1.git library
-```
 
-### to run tests
-in project root run:
+### To run the tests
+
 ```
+cd Software-Testing
 npm run test
 ```
