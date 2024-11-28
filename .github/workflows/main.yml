@@ -21,11 +21,5 @@ jobs:
     - name: Install dependencies for the main project
       run: npm install
 
-    - name: Install dependencies for the test library
-      run: |
-        cd library
-        npm install
-        cd ..
-
     - name: Run tests
       run: npm run test
