@@ -35,7 +35,7 @@ describe('Tests for add.js', () => {
     expect(add(1e10, 1e10)).to.equal(2e10);
   });
 
-  it('should concatenate strings if one of the arguments is strings', () => {
+  it('should concatenate strings if one of the arguments is a string', () => {
     expect(add('6', 4)).to.equal('64');
   });
 
@@ -53,5 +53,43 @@ describe('Tests for add.js', () => {
 
   it('should return NaN when adding an array', () => {
     expect(add([1, 2], 5)).to.be.NaN;
+  });
+
+  it('should handle mixed inputs with valid and invalid types', () => {
+    expect(add('12', null)).to.equal('12null');
+    expect(add(null, '34')).to.equal('null34');
+  });
+
+  it('should handle empty strings as concatenated strings', () => {
+    expect(add('', 5)).to.equal('5'); // Päivitetty testin odotus
+    expect(add('', '')).to.equal(''); // Tyhjien merkkijonojen yhdistäminen
+  });  
+
+  it('should handle boolean values correctly', () => {
+    expect(add(true, 5)).to.equal(6); // true -> 1
+    expect(add(false, 5)).to.equal(5); // false -> 0
+  });
+
+  it('should add a number and a string representing a number', () => {
+    expect(add(5, '10')).to.equal('510');
+    expect(add('10', 5)).to.equal('105');
+  });
+
+  it('should return the second operand when adding undefined and invalid types', () => {
+    const testSymbol = Symbol('x');
+    expect(add(undefined, testSymbol)).to.equal(testSymbol);
+  });
+  
+  
+
+  it('should handle Infinity values correctly', () => {
+    expect(add(Infinity, 1)).to.equal(Infinity);
+    expect(add(-Infinity, 1)).to.equal(-Infinity);
+    expect(add(Infinity, -Infinity)).to.be.NaN;
+  });
+
+  it('should handle edge cases with special number values', () => {
+    expect(add(NaN, 5)).to.be.NaN;
+    expect(add(0, -0)).to.equal(0); // JavaScript specific edge case
   });
 });

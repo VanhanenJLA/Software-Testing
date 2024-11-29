@@ -4,8 +4,8 @@
     "type": "module",
     "scripts": {
         "test": "mocha ./tests",
-        "test-coverage": "nyc mocha ./tests --reporter=mocha-lcov-reporter > coverage.lcov",
-        "coverage": "nyc npm test && nyc report --reporter=text-lcov | ./node_modules/coveralls/bin/coveralls.js"
+        "test-coverage": "mkdir -p coverage && nyc mocha ./tests --reporter=mocha > coverage/lcov.info",
+        "coverage": "npm run test-coverage && npx coveralls-next < coverage/lcov.info"
     },
     "keywords": [],
     "author": "",

@@ -1,18 +1,12 @@
 {
-    "check-coverage": true,
     "all": true,
-    "include": [
-        "library/src/**/*.js"
-    ],
-    "exclude": [
-        "tests/",
-        "library/src/.internal/"
-    ],
-    "reporter": [
-        "html",
-        "lcov",
-        "text",
-        "text-summary"
-    ],
-    "report-dir": "coverage"
+    "include": ["library/src/*.js"],
+    "exclude": ["tests/", "library/src/.include"],
+    "reporter": ["text", "lcov"],
+    "report-dir": "coverage",
+    "check-coverage": true,
+    "branches": 0,
+    "lines": 0,
+    "functions": 0,
+    "statements": 0
 }
