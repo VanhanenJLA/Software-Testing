@@ -9,14 +9,19 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+    - name: Checkout repository
     - uses: actions/checkout@v4
+    
+    - name: Clone the test library
+      run: |
+        git clone https://github.com/otula/COMP.SE.200-2024-2025-1.git library
 
     - name: Use Node.js 20.x
       uses: actions/setup-node@v3
       with:
         node-version: 20.x
 
-    - name: npm install, make test-coverage
+    - name: npm install, run test-coverage
       run: |
         npm install
         npm run coverage
