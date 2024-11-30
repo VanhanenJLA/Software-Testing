@@ -23,3 +23,12 @@ cd Software-Testing
 npm install
 npm run test
 ```
+
+### Environment Variables
+
+This project uses environment variables to configure sensitive or environment-specific settings. Follow these steps to set up your environment:
+
+1. Copy the `.env.example` file to a new file named `.env`:
+   ```bash
+   cp .env.example .env
+

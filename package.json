@@ -7,7 +7,6 @@
         "test-coverage": "mkdir -p coverage && nyc mocha --reporter=mocha > coverage/lcov.info",
         "coverage": "npm run test-coverage && npx coveralls-next < coverage/lcov.info",
         "coveragee": "nyc mocha && nyc report --reporter=text-lcov | npx coveralls-next"
-
     },
     "keywords": [],
     "author": "",
@@ -19,5 +18,8 @@
         "mocha": "^10.8.2",
         "mocha-lcov-reporter": "^1.3.0",
         "nyc": "^17.1.0"
+    },
+    "dependencies": {
+        "dotenv": "^16.4.5"
     }
 }
