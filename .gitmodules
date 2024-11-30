@@ -1,4 +1,4 @@
 [submodule "library"]
 	path = library
-	url = git@github.com:otula/COMP.SE.200-2024-2025-1.git
+	url = https://github.com/otula/COMP.SE.200-2024-2025-1.git
 	ignore = all
