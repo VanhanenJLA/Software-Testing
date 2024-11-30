@@ -1,0 +1,18 @@
+variables:
+  threshold: 0
+all: true
+include:
+  - library/src/*.js
+exclude:
+  - tests/
+  - library/src/.include
+reporter:
+  - text
+  - lcov
+report-dir: output/coverage
+temp-dir: output/.nyc_output
+check-coverage: true
+branches: $(threshold)
+lines: $(threshold)
+functions: $(threshold)
+statements: $(threshold)
