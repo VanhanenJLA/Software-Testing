@@ -3,9 +3,11 @@
     "version": "1.0.0",
     "type": "module",
     "scripts": {
-        "test": "mocha ./tests",
-        "test-coverage": "mkdir -p coverage && nyc mocha ./tests --reporter=mocha > coverage/lcov.info",
-        "coverage": "npm run test-coverage && npx coveralls-next < coverage/lcov.info"
+        "test": "mocha",
+        "test-coverage": "mkdir -p coverage && nyc mocha --reporter=mocha > coverage/lcov.info",
+        "coverage": "npm run test-coverage && npx coveralls-next < coverage/lcov.info",
+        "coveragee": "nyc mocha && nyc report --reporter=text-lcov | npx coveralls-next"
+
     },
     "keywords": [],
     "author": "",
