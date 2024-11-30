@@ -4,15 +4,17 @@
     "type": "module",
     "scripts": {
         "test": "mocha",
+        "tests" : "set NODE_OPTIONS=--loader=@istanbuljs/esm-loader-hook && nyc mocha",
         "test-coverage": "mkdir -p coverage && nyc mocha --reporter=mocha > coverage/lcov.info",
         "coverage": "npm run test-coverage && npx coveralls-next < coverage/lcov.info",
-        "coveragee": "nyc mocha && nyc report --reporter=text-lcov | npx coveralls-next"
+        "coveragee": "set NODE_OPTIONS=--loader=@istanbuljs/esm-loader-hook && nyc mocha && nyc report --reporter=text-lcov | npx coveralls-next"
     },
     "keywords": [],
     "author": "",
     "license": "MIT",
     "description": "",
     "devDependencies": {
+        "@istanbuljs/esm-loader-hook": "^0.2.0",
         "chai": "^5.1.2",
         "coveralls-next": "^4.2.1",
         "mocha": "^10.8.2",
@@ -23,3 +25,4 @@
         "dotenv": "^16.4.5"
     }
 }
+    
