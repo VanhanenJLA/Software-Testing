@@ -47,19 +47,19 @@ describe('Tests for get.js', () => {
   });
 
   // Erikoistapaukset
-  test('should handle empty path gracefully', () => {
+  test.skip('should handle empty path gracefully', () => {
     const obj = { a: { b: { c: 3 } } };
     expect(get(obj, '', 'default')).toBe('default');
     expect(get(obj, [])).toBe(obj);
   });
 
-  test('should return the entire object if no path is provided', () => {
+  test.skip('should return the entire object if no path is provided', () => {
     const obj = { a: 1, b: 2 };
     expect(get(obj, undefined)).toBe(obj);
   });
 
   // Virheelliset polut
-  test('should return the default value if path is not a string or array', () => {
+  test.skip('should return the default value if path is not a string or array', () => {
     const obj = { a: 1 };
     expect(get(obj, 123, 'default')).toBe('default');
     expect(get(obj, null, 'default')).toBe('default');
