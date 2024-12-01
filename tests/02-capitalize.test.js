@@ -1,66 +1,63 @@
-import { describe, it } from 'mocha';
-import { expect } from 'chai';
 import capitalize from '../library/src/capitalize.js';
 
 describe('Tests for capitalize.js', () => {
-
-  it('should capitalize a fully lowercase string', () => {
-    expect(capitalize('hello')).to.equal('Hello');
+  test('should capitalize a fully lowercase string', () => {
+    expect(capitalize('hello')).toBe('Hello');
   });
 
-  it('should capitalize a fully uppercase string', () => {
-    expect(capitalize('WORLD')).to.equal('World');
+  test('should capitalize a fully uppercase string', () => {
+    expect(capitalize('WORLD')).toBe('World');
   });
 
-  it('should capitalize a mixed-case string', () => {
-    expect(capitalize('jAvAsCrIpT')).to.equal('Javascript');
+  test('should capitalize a mixed-case string', () => {
+    expect(capitalize('jAvAsCrIpT')).toBe('Javascript');
   });
 
-  it('should return an empty string when given an empty string', () => {
-    expect(capitalize('')).to.equal('');
+  test('should return an empty string when given an empty string', () => {
+    expect(capitalize('')).toBe('');
   });
 
-  it('should handle null input by returning the string "Null"', () => {
-    expect(capitalize(null)).to.equal('Null');
-  });
-  
-  it('should handle undefined input by returning the string "Undefined"', () => {
-    expect(capitalize(undefined)).to.equal('Undefined');
-  });
-  
-  it('should capitalize numeric input converted to string', () => {
-    expect(capitalize(123)).to.equal('123');
+  test('should handle null input by returning the string "Null"', () => {
+    expect(capitalize(null)).toBe('Null');
   });
 
-  it('should capitalize a boolean true converted to string', () => {
-    expect(capitalize(true)).to.equal('True');
+  test('should handle undefined input by returning the string "Undefined"', () => {
+    expect(capitalize(undefined)).toBe('Undefined');
   });
 
-  it('should capitalize a boolean false converted to string', () => {
-    expect(capitalize(false)).to.equal('False');
+  test('should capitalize numeric input converted to string', () => {
+    expect(capitalize(123)).toBe('123');
   });
 
-  it('should handle strings with leading spaces', () => {
-    expect(capitalize('   test')).to.equal('   test');
+  test('should capitalize a boolean true converted to string', () => {
+    expect(capitalize(true)).toBe('True');
   });
 
-  it('should handle strings with trailing spaces', () => {
-    expect(capitalize('example   ')).to.equal('Example   ');
+  test('should capitalize a boolean false converted to string', () => {
+    expect(capitalize(false)).toBe('False');
   });
 
-  it('should handle strings with special characters', () => {
-    expect(capitalize('!hello')).to.equal('!hello');
+  test('should handle strings with leading spaces', () => {
+    expect(capitalize('   test')).toBe('   test');
   });
 
-  it('should handle strings with numbers and letters', () => {
-    expect(capitalize('123abc')).to.equal('123abc');
+  test('should handle strings with trailing spaces', () => {
+    expect(capitalize('example   ')).toBe('Example   ');
   });
 
-  it('should capitalize strings with Unicode characters', () => {
-    expect(capitalize('über')).to.equal('Über');
+  test('should handle strings with special characters', () => {
+    expect(capitalize('!hello')).toBe('!hello');
   });
 
-  it('should handle strings with emoji characters', () => {
-    expect(capitalize('😊happy')).to.equal('😊happy');
+  test('should handle strings with numbers and letters', () => {
+    expect(capitalize('123abc')).toBe('123abc');
+  });
+
+  test('should capitalize strings with Unicode characters', () => {
+    expect(capitalize('über')).toBe('Über');
+  });
+
+  test('should handle strings with emoji characters', () => {
+    expect(capitalize('😊happy')).toBe('😊happy');
   });
 });

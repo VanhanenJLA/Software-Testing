@@ -1,28 +1,25 @@
 {
     "name": "software-testing",
     "version": "1.0.0",
-    "type": "module",
     "scripts": {
-        "test": "mocha",
-        "tests" : "set NODE_OPTIONS=--loader=@istanbuljs/esm-loader-hook && nyc mocha",
-        "test-coverage": "mkdir -p coverage && nyc mocha --reporter=mocha > coverage/lcov.info",
-        "coverage": "npm run test-coverage && npx coveralls-next < coverage/lcov.info",
-        "coveragee": "set NODE_OPTIONS=--loader=@istanbuljs/esm-loader-hook && nyc mocha && nyc report --reporter=text-lcov | npx coveralls-next"
+        "test": "jest",
+        "test-coverage": "jest --coverage",
+        "coverage": "npm run test-coverage && npx coveralls-next < coverage/lcov.info"
     },
     "keywords": [],
     "author": "",
     "license": "MIT",
     "description": "",
     "devDependencies": {
-        "@istanbuljs/esm-loader-hook": "^0.2.0",
-        "chai": "^5.1.2",
+        "@babel/core": "^7.26.0",
+        "@babel/preset-env": "^7.26.0",
+        "@jest/globals": "^29.7.0",
+        "babel-jest": "^29.7.0",
         "coveralls-next": "^4.2.1",
-        "mocha": "^10.8.2",
-        "mocha-lcov-reporter": "^1.3.0",
-        "nyc": "^17.1.0"
+        "istanbul": "^0.4.5",
+        "jest": "^29.7.0"
     },
     "dependencies": {
         "dotenv": "^16.4.5"
     }
 }
-    
