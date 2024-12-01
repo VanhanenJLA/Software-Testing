@@ -24,7 +24,7 @@ describe('Tests for ceil.js', () => {
     expect(ceil(5)).toBe(5);
   });
 
-  test('should return the same number if it is already a negative integer', () => {
+  test('should return the same number if it is a negative integer', () => {
     expect(ceil(-5)).toBe(-5);
   });
 
@@ -39,28 +39,56 @@ describe('Tests for ceil.js', () => {
   });
 
   test('should handle very small numbers', () => {
-    expect(ceil(0.000000123, 10)).toBe(0.000000123); // Päivitetty tarkka tulos
+    expect(ceil(0.000000123, 10)).toBe(0.000000123); // Tarkka tulos
   });
 
-  // Tyhjät ja väärät syötteet
-  test('should return the input if precision is not a number', () => {
-    expect(ceil(5.5, 'two')).toBe(6); // Päivitetty odotettu tulos
+  // Infinity-tapaukset
+  test('should handle positive Infinity', () => {
+    expect(ceil(Infinity)).toBe(Infinity);
   });
 
-  test('should return NaN if both inputs are invalid', () => {
-    expect(ceil('abc', 'def')).toBeNaN();
+  test('should handle negative Infinity', () => {
+    expect(ceil(-Infinity)).toBe(-Infinity);
   });
 
-  // Undefined- ja null-arvot
-  test('should treat undefined precision as 0', () => {
-    expect(ceil(5.678)).toBe(6); // Default precision
+  // Merkkijonot ja muut tyypit
+  test('should return NaN if input is NaN', () => {
+    expect(ceil(NaN)).toBeNaN();
   });
 
-  test('should return 0 if the number is null', () => {
-    expect(ceil(null)).toBe(0); // Päivitetty odotettu tulos
+  test('should handle string inputs by converting them to numbers', () => {
+    expect(ceil('4.006')).toBe(5);
   });
 
-  test('should return NaN if the number is undefined', () => {
+  test('should return NaN if string input is not a number', () => {
+    expect(ceil('abc')).toBeNaN();
+  });
+
+  // Booleanit
+  test('should treat true as 1 and false as 0', () => {
+    expect(ceil(true)).toBe(1);
+    expect(ceil(false)).toBe(0);
+  });
+
+  // Null ja undefined
+  test('should treat null as 0', () => {
+    expect(ceil(null)).toBe(0);
+  });
+
+  test('should return NaN if input is undefined', () => {
     expect(ceil(undefined)).toBeNaN();
+  });
+
+  // Erikoistapaukset
+  test('should handle negative precision rounding for decimals', () => {
+    expect(ceil(45.95, -1)).toBe(50);
+  });
+
+  test('should handle large precision values', () => {
+    expect(ceil(1.23456789, 292)).toBe(1.23456789);
+  });
+
+  test('should handle invalid precision values as 0', () => {
+    expect(ceil(4.006, 'abc')).toBe(5);
   });
 });
