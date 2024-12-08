@@ -6,11 +6,10 @@
 ## Getting started
 
 ### Clone this repository with submodules 
-
 ```
 git clone --recurse-submodules git@github.com:VanhanenJLA/Software-Testing.git
 ```
-This clones repository to folder `Software-Testing` and library to be tested should now be in folder `Software-Testing\library`
+This clones repository to folder `Software-Testing` and Utility library to be tested should now be in folder `Software-Testing\library`
 
 #### How to update Submodules in an already cloned repo
 
@@ -30,6 +29,12 @@ npm install
 
 ```
 npm run test
+```
+
+### Run unit tests locally with test coverage reporting
+
+```
+npm run test-coverage
 ```
 
 ### Push test results to Coveralls integrations after local unit test run
