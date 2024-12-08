@@ -1,3 +1,6 @@
+[![Coverage Status](https://coveralls.io/repos/github/VanhanenJLA/Software-Testing/badge.svg?branch=main)](https://coveralls.io/github/VanhanenJLA/Software-Testing?branch=main)
+
+
 # Software Testing Assignment
 
 ## Getting started
