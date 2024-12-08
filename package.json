@@ -4,7 +4,8 @@
     "scripts": {
         "test": "jest",
         "test-coverage": "jest --coverage",
-        "coverage": "npm run test-coverage && npx coveralls-next < coverage/lcov.info"
+        "coverage": "npm run test-coverage && npx coveralls-next < coverage/lcov.info",
+        "win-coverage": "npx jest --coverage && type coverage\\lcov.info | npx coveralls-next"
     },
     "keywords": [],
     "author": "",
